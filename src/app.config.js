@@ -3,7 +3,8 @@ export default defineAppConfig({
         'pages/index/index', 
         'pages/photos/photos',
         'pages/message/message',
-        'pages/my/my'
+        'pages/my/my',
+        'pages/release/release'
     ],
 
     window: {
@@ -29,9 +30,11 @@ export default defineAppConfig({
                 iconPath:'static/image/摄像头.png',
                 selectedIconPath:'static/image/选中摄像头.png'
             },
-            // {   
-            //     iconPath:'static/image/发布.png',
-            // },
+            {   
+                pagePath:'pages/release/release',
+                iconPath:'static/image/发布.png',
+                selectedIconPath:'static/image/发布.png'
+            },
             {
                 pagePath:'pages/message/message',
                 iconPath:'static/image/消息.png',
