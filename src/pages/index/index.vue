@@ -28,7 +28,6 @@
         <view>俱乐部</view>
       </view>
     </view>
-    <!-- <button size="mini">按</button> -->
     <view class="tofee">
       <view class="smallwindow"> 
         <view class="match"><image src="../../static/image/赛事tag.png"></image>赛事评选</view>
@@ -37,8 +36,64 @@
       </view>
       
       <view class="tofeeright">
-        <view class="fir">一些东西</view>
-        <view class="sec">soaks</view>
+        <view class="fir">暂时</view>
+        <view class="sec">暂时</view>
+      </view>
+    </view>
+    <view class="show">
+      <view class="showlist">
+        <navigator url="navigate/navigate?title=navigate" hover-class="navigator-hover">
+					关注
+				</navigator>
+				<navigator url="redirect/redirect?title=redirect" open-type="redirect" hover-class="navigator-hover">
+					推荐
+				</navigator>
+      </view>
+      <view class="showcontent">
+        <view class="contentitem">
+          <view class="top">
+            <image src="../../static/image/头像1.png" mode="aspectFill"></image>
+            <view>
+              <view class="">HEARTBREACK</view>
+              <view class="time">07.15 18:23</view>
+            </view>
+            <view class="guanzhu" :style="yiguanzhu" v-html='guanzhutext'  @tap='guanzhu'></view>
+          </view>
+          <view class="middle">
+            <image src="../../static/image/show1.png" mode="aspectFill"></image>
+            <image src="../../static/image/show2.png" mode="aspectFill"></image>
+            <image src="../../static/image/show3.png" mode="aspectFill"></image>
+          </view>
+          <view class="bottom">
+            <view class="tag">
+              # 建筑
+            </view>
+            <view class="comment"></view>
+            <view class="count"><image src="../../static/image/评论.svg"></image> 25 <image src="../../static/image/爱心.svg"></image> 268</view>
+          </view>
+        </view>
+        <!-- <view class="contentitem">
+          <view class="top">
+            <image src="../../static/image/头像2.png" mode="aspectFill"></image>
+            <view>
+              <view class="">As it was</view>
+              <view class="time">08.15 18:23</view>
+            </view>
+            <view class="guanzhu" @tap='guanzhu'>关注</view>
+          </view>
+          <view class="middle">
+            <image src="../../static/image/show1.png" mode="aspectFill"></image>
+            <image src="../../static/image/show2.png" mode="aspectFill"></image>
+            <image src="../../static/image/show3.png" mode="aspectFill"></image>
+          </view>
+          <view class="bottom">
+            <view class="tag">
+              # 建筑
+            </view>
+            <view class="comment"></view>
+            <view class="count"><image src="../../static/image/评论.svg"></image> 75 <image src="../../static/image/爱心.svg"></image> 868</view>
+          </view>
+        </view> -->
       </view>
     </view>
   </view>
@@ -51,16 +106,21 @@ export default {
   data () {
     return {
       msg: 'Hello ?!',
-      tagtxt:'街景'
+      tagtxt:'街景',
+      yiguanzhu:{},
+      guanzhutext:'关注'
+    }
+  },
+  methods:{
+    guanzhu(){
+      this.$data.yiguanzhu={'background':'aliceblue','color':'#656566','text':'已关注'}
+      this.$data.guanzhutext='已关注'
     }
   }
 }
 </script>
 
 <style lang="less">
-// .body{
-//   padding: 30rpx ;
-// }
 .bg{
   position: fixed;
   top: 0;
@@ -103,15 +163,14 @@ export default {
 }
 .main{
   background-color: #fff;
-  height: 500px;
   padding: 50rpx;
   border-radius: 50px 50px 0 0;
   .iconlist{
-    padding: 20px 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    color:#656566;
     .iconitem{
       image{
         width: 70rpx;
@@ -120,7 +179,7 @@ export default {
     }
   }
   .tofee{
-    padding: 30rpx 0;
+    padding: 50rpx 0;
     display: flex;
     justify-content: space-between;
     .smallwindow{
@@ -157,12 +216,101 @@ export default {
       }
     }
     .tofeeright{
+      color: #656566;
+      font-size: 36rpx;
       .fir{
-        width: 200rpx;
+        border-radius: 50px;
+        padding: 20rpx;
+        margin-bottom: 20rpx;      
+        width: 250rpx;
+        background-color: aliceblue;
+      }
+      .sec{
+        border-radius: 50px;
+        padding: 20rpx;
+        margin-bottom: 20rpx;
+        width: 150rpx;
         background-color: aliceblue;
       }
     }
   }
+  .show{
+    color: #656566;
+    .showlist{
+      display: flex;
+      border-bottom: 1px solid #F0F0F0;
+      navigator{
+        margin:0 40px  20px 0;
+      }
+      .navigator-hover{
+        color: #91B4FF;
+        background-color: #fff; 
+        opacity: 0.7;
+      }
+    }
+    .showcontent{
+      .contentitem{
+        padding: 45rpx 0;
+        border-bottom: 10px solid rgb(233, 240, 240);
+        image{
+          width: 100rpx;
+          height: 100rpx;
+          border-radius: 50%;
+        }
+        .top{
+          display: flex;
+          justify-content: space-between;
+          .time{
+            font-size: 34rpx;
+            color: rgb(214, 205, 205);
+          }
+          .guanzhu{
+            height: 100%;
+            font-size: 34rpx;
+            background-color: #559df4;
+            color: #fff;
+            padding:10px 30px;
+            border-radius: 30px;
+          }
+        }
+        .middle{
+          margin:30rpx 0;
+          display: flex;
+          justify-content: space-between;
+          image{
+            width: 200rpx;
+            height: 200rpx;
+            border-radius: 15rpx;
+          }
+        }
+        .bottom{
+          font-size: 34rpx;
+          display: flex;
+          justify-content: space-between;
+          .tag{
+            background-color:antiquewhite;
+            border-radius: 20px;
+            padding: 5px 15px;
+          }
+          .comment{
+            width: 40%;
+            background-color:aliceblue;
+            border-radius: 20px;
+            padding: 5px 10px;
+          }
+          .count{
+            display: flex;
+            align-items: center;
+            image{
+              width: 45rpx;
+              height: 45rpx;
+            }
+          }
+        }
+      }
+
+    }
+  }
 
 }
-</style>>
+</style>
