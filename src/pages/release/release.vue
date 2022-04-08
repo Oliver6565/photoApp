@@ -1,5 +1,8 @@
 <template>
   <view class="index">
+    <image src="../../static/image/客服.png"></image>
+<image src="../../static/image/手册.png"></image>
+<image src="../../static/image/收藏.png"></image>
     <text>{{ msg }}</text>
   </view>
 </template>
@@ -13,6 +16,11 @@ export default {
   }
 }
 </script>
-<style lang="less" scoped>
-
+<style lang="less">
+.index{
+  image{
+    width: 80rpx;
+    height: 80rpx;
+  }
+}
 </style>

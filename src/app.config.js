@@ -1,10 +1,11 @@
 export default defineAppConfig({
     pages: [
         'pages/index/index', 
-        'pages/photos/photos',
+        'pages/square/square',
         'pages/message/message',
         'pages/my/my',
-        'pages/release/release'
+        'pages/release/release',
+        'pages/match/match'
     ],
 
     window: {
@@ -26,9 +27,9 @@ export default defineAppConfig({
                 selectedIconPath:'static/image/选中星球.png'
             },
             {
-                pagePath:'pages/photos/photos',
-                iconPath:'static/image/摄像头.png',
-                selectedIconPath:'static/image/选中摄像头.png'
+                pagePath:'pages/square/square',
+                iconPath:'static/image/广场.png',
+                selectedIconPath:'static/image/选中广场.png'
             },
             {   
                 pagePath:'pages/release/release',
@@ -51,7 +52,8 @@ export default defineAppConfig({
     //     current:0,
     //     list:[
     //         {
-
+    //             path:'pages/match/match',
+    //             // query:
     //         }
     //     ]
     // }

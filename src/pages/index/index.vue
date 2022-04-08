@@ -32,7 +32,7 @@
       <view class="smallwindow"> 
         <view class="match"><image src="../../static/image/赛事tag.png"></image>赛事评选</view>
         <view class="matchname">-- 梦境</view>
-        <button size='mini'>立即参加</button>
+        <button size='mini' @tap="toMatch" >立即参加</button>
       </view>
       
       <view class="tofeeright">
@@ -115,6 +115,11 @@ export default {
     guanzhu(){
       this.$data.yiguanzhu={'background':'aliceblue','color':'#656566','text':'已关注'}
       this.$data.guanzhutext='已关注'
+    },
+    toMatch(){
+      wx.redirectTo({
+        url:'../match/match'
+      })
     }
   }
 }
@@ -133,6 +138,7 @@ export default {
   align-items: center;
   justify-content: center;
   // height: 150rpx;
+  font-size: 34rpx;
   .saomiao{
     width: 60rpx;
     height: 60rpx;
@@ -170,8 +176,10 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-size: 34rpx;
     color:#656566;
     .iconitem{
+      text-align: center;
       image{
         width: 70rpx;
         height: 70rpx;
@@ -191,26 +199,26 @@ export default {
       height: 300rpx;
       border-radius: 25px;
       padding: 10rpx 25rpx 10rpx 10rpx;
+      font-size: 36rpx;
       .match{
         display: flex;
         align-items: center;
         justify-content: space-around;
+
+        color: #fff;
+        padding: 10rpx 0;
         image{
           display: inline-block;
           width: 100rpx;
           height: 100rpx;
         }
-        font-size: 42rpx;
-        color: #fff;
-        padding: 20rpx 0;
       }
       .matchname{
         padding-left:28rpx;
         color: antiquewhite;
       }
       button{
-        // color: #fff;
-        margin-top:36rpx;
+        margin-top:50rpx;
         margin-left:20rpx;
         background-color: #96D7ED;
       }
@@ -250,6 +258,7 @@ export default {
     }
     .showcontent{
       .contentitem{
+        font-size: 34rpx;
         padding: 45rpx 0;
         border-bottom: 10px solid rgb(233, 240, 240);
         image{
@@ -261,12 +270,10 @@ export default {
           display: flex;
           justify-content: space-between;
           .time{
-            font-size: 34rpx;
             color: rgb(214, 205, 205);
           }
           .guanzhu{
             height: 100%;
-            font-size: 34rpx;
             background-color: #559df4;
             color: #fff;
             padding:10px 30px;
@@ -276,15 +283,14 @@ export default {
         .middle{
           margin:30rpx 0;
           display: flex;
-          justify-content: space-between;
+          justify-content: space-around;
           image{
-            width: 200rpx;
-            height: 200rpx;
+            width: 210rpx;
+            height: 210rpx;
             border-radius: 15rpx;
           }
         }
         .bottom{
-          font-size: 34rpx;
           display: flex;
           justify-content: space-between;
           .tag{

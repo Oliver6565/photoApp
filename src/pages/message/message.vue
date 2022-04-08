@@ -26,7 +26,10 @@
           <view>as it was</view>
           <view>why don't we leave it at that</view>
         </view>
-        <view class="time">18:30</view>
+        <view class="time">
+          <view>今日</view>
+          18:30
+        </view>
       </view>
     </view>
   </view>
@@ -55,6 +58,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   .iconitem{
+    text-align: center;
     image{
       width: 70rpx;
       height: 70rpx;
@@ -87,7 +91,7 @@ export default {
       }
     }
     .time{
-      font-size: 34rpx;
+      font-size: 32rpx;
     }
   }
 }
