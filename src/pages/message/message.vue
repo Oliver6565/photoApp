@@ -50,7 +50,7 @@ export default {
   color:#656566;
 }
 .iconlist{
-  font-size: 36rpx;
+  font-size: 34rpx;
   padding-bottom: 50rpx;
   border-bottom: 10px solid rgb(233, 240, 240);
   display: flex;
@@ -69,6 +69,7 @@ export default {
   padding: 20rpx 0;
   .title{
     padding: 20rpx 0;
+    font-size: 36rpx;
   }
   .messageitem{
     border-bottom: 5px solid rgb(233, 240, 240);
@@ -81,12 +82,12 @@ export default {
       border-radius: 10px;
     }
     .text{
-      font-size: 36rpx;
+      font-size: 32rpx;
       width: 400rpx;
-      height: 110rpx;
+      height: 100rpx;
       overflow: hidden;
       view:nth-child(1){
-        font-size: 40rpx;
+        font-size: 36rpx;
         color: #000;
       }
     }

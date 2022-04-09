@@ -5,7 +5,9 @@ export default defineAppConfig({
         'pages/message/message',
         'pages/my/my',
         'pages/release/release',
-        'pages/match/match'
+        'pages/match/match',
+        'pages/wanted/wanted',
+        'pages/other/other',
     ],
 
     window: {

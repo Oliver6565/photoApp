@@ -1,18 +1,19 @@
 <template>
 <view class="body">
+
 </view>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      msg: 'Hello ?!',
-      tagtxt:'街景',
-      yiguanzhu:{},
-      guanzhutext:'关注'
-    }
-  }
+  // data () {
+  //   return {
+  //     msg: 'Hello ?!',
+  //     tagtxt:'街景',
+  //     yiguanzhu:{},
+  //     guanzhutext:'关注'
+  //   }
+  // }
 }
 </script>
 

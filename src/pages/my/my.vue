@@ -86,15 +86,15 @@ export default {
     border-radius: 50%;
   }
   .text{
-    font-size: 34rpx;
-    height: 110rpx;
+    font-size: 32rpx;
+    height: 100rpx;
     width: 470rpx;
     overflow: hidden;
     .name{
       width: 400rpx;
       white-space:nowrap;
       overflow: hidden;
-      font-size: 40rpx;
+      font-size: 36rpx;
       color: #000;
     }
   }
@@ -109,6 +109,7 @@ export default {
   }
 }
 .iconlist{
+  font-size: 36rpx;
   margin: 30rpx 0;
   display: flex;
   justify-content: space-around;
@@ -120,6 +121,7 @@ export default {
   }
 }
 .certification{
+  // font-size: 40rpx;
   display: flex;
   justify-content: space-around;
   align-items: center;

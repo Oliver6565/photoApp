@@ -3,7 +3,7 @@
     <view class="banner">
       <view>好图不求人</view>
       <view>想拍好图上约拍</view>
-      <view class="shouce">使用手册</view>
+      <view class="faqi" @tap="toPhotowanted" >发起约拍</view>
     </view>
     <view class="reward">
       <text>一站式悬赏好图</text>
@@ -34,6 +34,13 @@ export default {
     return {
       msg: '约拍广场'
     }
+  },
+  methods:{
+    toPhotowanted(){
+      wx.redirectTo({
+        url:'../wanted/wanted'
+      })
+    }
   }
 }
 </script>
@@ -53,9 +60,10 @@ export default {
   view:nth-child(2){
     font-size: 32rpx;
   }
-  .shouce{
+  .faqi{
     background-color: #fff;
-    color: #559df4;
+    color: #FF9E1D;
+    font-weight: 400;
     font-size: 30rpx;
     border-radius: 50px;
     padding: 15px;
@@ -73,8 +81,9 @@ export default {
 }
 .todaynew{
   margin-top:30rpx;
+  font-size: 36rpx;
   .contentitem{
-    padding: 40rpx 0;
+    padding: 20rpx 0;
     border-bottom: 10px solid rgb(233, 240, 240);
     image{
       width: 100rpx;

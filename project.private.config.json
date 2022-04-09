@@ -44,6 +44,20 @@
           "name": "",
           "pathName": "pages/match/match",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/wanted/wanted",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/release/release",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

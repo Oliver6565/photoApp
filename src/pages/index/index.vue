@@ -13,7 +13,7 @@
     <view class="iconlist">
       <view class="iconitem">
         <image src='../../static/image/作品.png'></image><br />
-        <view>作品</view>
+        <view>大咖作品</view>
       </view>
       <view class="iconitem">
         <image src='../../static/image/约拍.png'></image><br />
@@ -245,6 +245,7 @@ export default {
   .show{
     color: #656566;
     .showlist{
+      font-size: 36rpx;
       display: flex;
       border-bottom: 1px solid #F0F0F0;
       navigator{
