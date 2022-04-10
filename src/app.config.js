@@ -7,6 +7,7 @@ export default defineAppConfig({
         'pages/release/release',
         'pages/match/match',
         'pages/wanted/wanted',
+        'pages/setup/setup',
         'pages/other/other',
     ],
 

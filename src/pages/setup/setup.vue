@@ -1,27 +1,22 @@
 <template>
   <view class="body">
-    <view class="top">
-      <textarea :auto-focusd="true" placeholder="好的标题能吸引更多人的注意(最多20字)" placeholderStyle="color:#989799" />
-      <textarea :auto-focusd="true" placeholder="好的表述能让供图者正确理解需求(最多140个字)" placeholderStyle="color:#989799;margin-top:90rpx" />
-    </view>
-    <view class="middle">
-      <image  @tap="onGetImgClick" v-if="imgSrc" :src="imgSrc"></image>
-      <view>添加需求封面</view>
-    </view>
-
-    <view class="bottom">
-      <view>
-        悬赏方式 *
-      </view>
-      <view>
-       图片分类
-      </view>
-      <view class="taglist" >
-        <view :class="flag[item.id]==0? tagstyle:'' " @tap="selected(item.id)" class="listitem" v-for="item in taglist" :key="item.index">
-          {{item.name}}
+    <form catchsubmit="formSubmit" catchreset="formReset">
+        <view class="middle">
+            <image v-if="imgSrc" :src="imgSrc" @tap="onGetImgClick"></image>
+            <view >更换头像</view>
         </view>
-      </view>
-    </view>
+
+        <view class="bottom">
+            <view>
+                <input class="" maxlength="10" placeholder="名字" />
+            </view>
+            <view>
+                <textarea class="" maxlength="50" placeholder="个性签名" />
+            </view>
+        </view>
+        <button size="mini" formType="submit">确定</button>
+        <button size="mini" formType="reset">Reset</button>
+    </form>
 
 
   </view> 
@@ -32,57 +27,10 @@ export default {
   data () {
     return {
       msg: '发布',
-      taglist:[
-        {
-          id:0,
-          name:'风景'},
-        {
-          id:1,
-          name:'建筑'},
-        {
-          id:2,
-          name:'人文'},
-        {
-          id:3,
-          name:'汉服'},
-        {
-          id:4,
-          name:'美食'},
-        {
-          id:5,
-          name:'美食'},
-        {
-          id:6,
-          name:'书画'},
-        {
-          id:7,
-          name:'静物'},
-        {
-          id:8,
-          name:'航拍'},
-        {
-          id:9,
-          name:'植物'}
-      ],
-      curid:0,
-      imgSrc:'../../static/image/添加2.png',
-      tagstyle:'',
-      flag:[0,0,0,0,0,0,0,0,0,0]
+      imgSrc:'../../static/image/添加2.png'
     }
   },
   methods:{
-    selected(index){
-      this.$data.curid = index
-      if(this.$data.flag[index]){
-        this.$data.tagstyle=''
-        this.$data.flag[index] = 0
-      }else{
-        this.$data.tagstyle='background-color:#EFB82E'
-        this.$data.flag[index] = 1
-      }
-      console.log(this.$data.flag)
-    },
-
     onGetImgClick(){
       const that = this
       wx.chooseImage({
@@ -163,6 +111,16 @@ export default {
             }
         })
     },
+    formSubmit(e) {
+        console.log('form发生了submit事件，携带数据为：', e.detail.value)
+  },
+
+    formReset(e) {
+        console.log('form发生了reset事件，携带数据为：', e.detail.value)
+        this.setData({
+        chosen: ''
+        })
+    }
   }
 }
 </script>
@@ -171,51 +129,27 @@ export default {
   padding: 30rpx 50rpx;
   color:#656566;
 }
-.top{
-  textarea:nth-child(1){
-      padding:20rpx 0rpx;
-      width: 100%;
-      height: 40rpx;
-      border-bottom: 2px solid rgb(233, 240, 240);
-      font-size: 30rpx;
-  }
-  textarea:nth-child(2){
-      padding:20rpx 0rpx;
-      width: 100%;
-      height: 120rpx;
-      border-bottom: 2px solid rgb(233, 240, 240);
-      font-size: 30rpx;
-  }    
-}
 .middle{
   display: flex;
   align-items: center;
   padding: 30rpx 0;
   border-bottom: 2px solid rgb(233, 240, 240);
-  font-size: 36rpx;
+  font-size: 32rpx;
   image{
     margin-right: 20rpx;
-    width: 80rpx;
-    height: 80rpx;
+    width: 60rpx;
+    height: 60rpx;
   }
 }
 .bottom{
-  font-size: 36rpx;
+  font-size: 32rpx;
   view{
     border-bottom: 2px solid rgb(233, 240, 240);
     padding: 20rpx 0;
   }
-  .taglist{
-    display: flex;
-    flex-wrap: wrap;
-    // justify-content: space-around;
-    .listitem{
-      padding: 10rpx 20rpx;
-      font-size: 32rpx;
-      background-color:rgb(233, 240, 240);
-      margin: 0 10rpx 10rpx 0;
-      border-radius: 50px;
-    }
+  textarea{
+      height: 110rpx;
+      width: 100%;
   }
 }
 </style>

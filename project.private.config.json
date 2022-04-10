@@ -58,6 +58,13 @@
           "name": "",
           "pathName": "pages/release/release",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/setup/setup",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

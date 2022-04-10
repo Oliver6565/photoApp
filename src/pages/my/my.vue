@@ -6,7 +6,7 @@
         <view class="name">harry styls</view>
         <view class="brief">why don't we leave it at that I want to say goodnight to you</view>
       </view>
-      <view class="setup"><image src="../../static/image/设置.png"></image></view>
+      <view class="setup"><image @tap="toSetup" src="../../static/image/设置.png"></image></view>
     </view>
     <view class="iconlist">
       <view class="iconitem" v-for='item in iconlist' :key='item.index'>
@@ -67,6 +67,13 @@ export default {
           url:'../../static/image/客服.png'
         }
       ]
+    }
+  },
+  methods:{
+    toSetup(){
+      wx.redirectTo({
+        url:'../setup/setup'
+      })
     }
   }
 }

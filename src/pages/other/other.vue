@@ -3,6 +3,7 @@
     <image src="../../static/image/客服.png"></image>
 <image src="../../static/image/手册.png"></image>
 <image src="../../static/image/收藏.png"></image>
+<image src="../../static/image/添加2.png"></image>
     <text>{{ msg }}</text>
   </view>
 </template>
